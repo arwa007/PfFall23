@@ -1,3 +1,12 @@
+\\172.16.5.41\Exam Submission\Arwa Feroze
+/*
+ * Programmer: Arwa Feroze
+ * Date: 11/9/23
+ * Description: Print hollow diamond usinhg n as an input to determine its size.
+ * Related files:
+ */
+  //--Include Files--//
+ //--Global Varriables--//
 #include <stdio.h>
 int main()
 {
