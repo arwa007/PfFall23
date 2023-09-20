@@ -17,6 +17,8 @@ int main() {
         float temp2=0;
         float x1=0;
         float x2=0;
+        int repeater=-1;
+        while (repeater<0){
         printf("Enter coefficient of x square (a) \n");
         scanf("%f", &a);
         printf("Enter coefficient of x (b) \n");
@@ -30,5 +32,6 @@ int main() {
         x2=temp2/(2*a);
         printf("%f", x1);
         printf(", ");
-        printf("%f", x2);
+        printf("%f\n", x2);
         }
+}
