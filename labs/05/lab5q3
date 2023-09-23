@@ -1,7 +1,0 @@
-#include <stdio.h>
-int main (){
-char choice=0;
-printf("Are you sure you want to delete? if yes, enter 'y.'If not, enter 'n.'");
-scanf("%c", &choice);
-
-}//end main
