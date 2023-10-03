@@ -1,7 +1,7 @@
 /*
  * Programmer: Arwa Feroze
  * Date: 3/10/23
- * Description: Check if input is a perect number.
+ * Description: Find LCM and GCD of two inputs.
  * Related files:
  */
   //--Include Files--//
