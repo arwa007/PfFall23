@@ -1,4 +1,11 @@
-#include <stdio.h>
+/*
+ * Programmer: Arwa Feroze
+ * Date: 18/9/23
+ * Description: Greeter according to time input.
+ * Related files:
+ */
+  //--Include Files--//
+ //--Global Varriables--//#include <stdio.h>#include <stdio.h>
 int main() {
 int hours=0;
 printf("Enter current hour in 24-hour format. Use 24 for 12 A.M.\n");
