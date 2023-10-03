@@ -1,4 +1,11 @@
-#include <stdio.h>
+/*
+ * Programmer: Arwa Feroze
+ * Date: 25/9/23
+ * Description: Calculator using Switch Case.
+ * Related files:
+ */
+  //--Include Files--//
+ //--Global Varriables--//#include <stdio.h>
 int main (){
 float num1, num2, ans=0;
 char op;
