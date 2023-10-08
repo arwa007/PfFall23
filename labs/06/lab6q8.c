@@ -1,6 +1,6 @@
  * Programmer: Arwa Feroze
  * Date: 8/10/23
- * Description: Match Sticks Game.
+ * Description: Display the reverse of an array.
  * Related files:
  */
   //--Include Files--//
