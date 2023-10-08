@@ -1,6 +1,6 @@
  * Programmer: Arwa Feroze
  * Date: 8/10/23
- * Description: Printing a table for integers.
+ * Description: Match Sticks Game.
  * Related files:
  */
   //--Include Files--//
