@@ -1,6 +1,6 @@
  * Programmer: Arwa Feroze
  * Date: 10/10/23
- * Description: Dividing two numbers without using division operator.
+ * Description: Dividing two numbers without using the division operator.
  * Related files:
  */
   //--Include Files--//
@@ -16,4 +16,5 @@ int main(){
 }//end while
  	rem = num1;
 	printf("The quotient is %d. \nThe remainder is %d", quo, rem);
+	 return 0;
 }//end main
