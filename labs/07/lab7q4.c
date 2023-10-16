@@ -1,8 +1,8 @@
 /*
-Programmer: Arwa Feroze
-Date: 10/16/2023
-Desc: Practicing PF mid
-/*
+ * Programmer: Arwa Feroze
+ * Date: 16/10/23
+ * Description: Check if input square matrix is symmetric.
+ */
 # include <stdio.h>
 # include <stdbool.h>
 int main(){
