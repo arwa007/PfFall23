@@ -18,8 +18,8 @@ int main(){
 			scanf("%d", &arr[i][j]);
 		}//end for
 	}//end for
-	for (i=2; i < size; i++){
-		for (j=2; j < size; j++){
+	for (i=1; i < size; i++){
+		for (j=1; j < size; j++){
 			if (arr[i][j] != arr[j][i]){
 				isSquare = false;
 			}//end if
