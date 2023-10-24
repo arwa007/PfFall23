@@ -6,7 +6,7 @@ minimum values in the array.
 */
 #include <stdio.h>
 void processArray(int arr[], int size){
-	int i, sum, max=-99999, min=99999;
+	int i, sum=0, max=-99999, min=99999;
 	for(i=0; i<size; i++){
 		sum = sum + arr[i];
 		if (arr[i] < min){
