@@ -1,14 +1,8 @@
 /*
 * Programmer: Arwa Feroze
 * Date: 24/10/2023
-* Desc: 
+* Desc: Calculcator using functions.
 */
-/*
- * Programmer: Arwa Feroze
- * Date: 25/9/23
- * Description: Calculator using Switch Case.
- * Related files:
- */
 #include <stdio.h>
 
 void addition(int num1, int num2){
