@@ -4,18 +4,10 @@
 * Description: Player statistics for all batsmen including total score, number of centuries and half centuries, and highscore using 2D array iterations.
 */
 
-
-
-/* 
-* Programmer: Arwa Feroze
-* Date: 31/10/2023
-* Description: Player statistics for all batsmen including total score, number of centuries and half centuries, and highscore using 2D array iterations.
-*/
-
 # include <stdio.h>
 int main(){
 	//Declare all variables
-	int men, inns, cent=0, half_cent=0, avg, total=0, max=0, i,j; 
+	int men, inns, cent, half_cent, avg, total, max, i,j; 
 	
 	//Input total number of men and number of innings.
 	printf("Enter the total number of men: ");
