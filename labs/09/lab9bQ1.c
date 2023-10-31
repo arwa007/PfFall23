@@ -1,3 +1,9 @@
+/*
+* Programmer: Arwa Feroze
+* Date:31/10/2023
+* Description: Write a function for finding factorial of any integer N using recursion.
+*/
+
 #include <stdio.h>
 int findFactorial(int n){
  
