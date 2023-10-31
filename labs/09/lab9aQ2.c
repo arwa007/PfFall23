@@ -1,3 +1,8 @@
+/*
+* Programmer: Arwa Feroze
+* Date: 31/10/2023
+* Description: Use pointers and functions to reverse a user input array.
+*/
 
 #include <stdio.h>
 void reverse(int *arr, int size){
