@@ -1,3 +1,8 @@
+/*
+* Programmer: Arwa Feroze
+* Date: 31/10/2023
+* Description: Modify the function swap and its call at line 12 to get the desired result.
+*/
 #include <stdio.h>
 
 void swap(int *a, int *b){ 
