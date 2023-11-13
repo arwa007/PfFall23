@@ -1,3 +1,8 @@
+/*
+* Programmer: Arwa Feroze
+* Date:31/10/2023
+* Description: Write a function for finding GCD first using loops and then using recursion.
+*/
 #include <stdio.h>
 int GCDrec(int a, int b){
 	if (b == 0){
