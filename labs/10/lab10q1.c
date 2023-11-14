@@ -1,6 +1,6 @@
-/*Programmer:
-* Date:
-* Desc:
+/*Programmer: Arwa Feroze
+* Date: 11/14/2023
+* Desc: creating a universal array printing function
 */
 
 #include <stdio.h>
