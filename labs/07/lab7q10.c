@@ -1,7 +1,7 @@
 /*
 * Programmer: Arwa Feroze
 * Date: 24/10/2023
-* Desc: ind a continuous sub-array in an unsorted array which adds to a given number S.
+* Desc: Find a continuous sub-array in an unsorted array which adds to a given number S.
 */
 #include <stdio.h>
 
