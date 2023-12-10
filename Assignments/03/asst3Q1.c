@@ -1,3 +1,10 @@
+/*
+ * Programmer: Arwa Feroze
+ * ID: 23k-0022
+ * Date: 8/12/23
+ *Desc: Creates a matrix from the max values of a matrix's submatrix
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
