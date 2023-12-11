@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Structure to represent box dimensions
+struct Box {
+    int length;
+    int width;
+    int height;
+};
+
+// Function to calculate the volume of a box
+int calculateVolume(struct Box box) {
+    return box.length * box.width * box.height;
+}
+
+int main() {
+    int numBoxes;
+    printf("Enter the number of boxes: ");
+    scanf("%d", &numBoxes);
+
+    struct Box boxes[numBoxes];
+
+    printf("Enter the dimensions of each box (length width height):\n");
+    for (int i = 0; i < numBoxes; ++i) {
+        scanf("%d %d %d", &boxes[i].length, &boxes[i].width, &boxes[i].height);
+    }
+
+    printf("Volumes of boxes that can pass through the tunnel:\n");
+    for (int i = 0; i < numBoxes; ++i) {
+        if (boxes[i].height < 41) {
+            int volume = calculateVolume(boxes[i]);
+            printf("%d\n", volume);
+        }
+    }
+
+    return 0;
+}
