@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_STUDENTS 450
+#define MAX_NAME_LENGTH 50
+#define MAX_DEPT_LENGTH 50
+#define MAX_COURSE_LENGTH 50
+
+// Structure to store student data
+struct Student {
+    int rollNumber;
+    char name[MAX_NAME_LENGTH];
+    char department[MAX_DEPT_LENGTH];
+    char course[MAX_COURSE_LENGTH];
+    int yearOfJoining;
+};
+
+// Function to print names of students who joined in a particular year
+void printStudentsByYear(struct Student students[], int numStudents, int year) {
+    printf("Students who joined in year %d:\n", year);
+    for (int i = 0; i < numStudents; ++i) {
+        if (students[i].yearOfJoining == year) {
+            printf("%s\n", students[i].name);
+        }
+    }
+    printf("\n");
+}
+
+// Function to print data of a student based on roll number
+void printStudentByRollNumber(struct Student students[], int numStudents, int roll) {
+    int found = 0;
+    for (int i = 0; i < numStudents; ++i) {
+        if (students[i].rollNumber == roll) {
+            printf("Student details for Roll Number %d:\n", roll);
+            printf("Name: %s\n", students[i].name);
+            printf("Department: %s\n", students[i].department);
+            printf("Course: %s\n", students[i].course);
+            printf("Year of Joining: %d\n", students[i].yearOfJoining);
+            found = 1;
+            break;
+        }
+    }
+    if (!found) {
+        printf("Student with Roll Number %d not found.\n", roll);
+    }
+    printf("\n");
+}
+
+int main() {
+    struct Student students[MAX_STUDENTS];
+    // Example usage of functions
+    printStudentsByYear(students, 2, 2020); // Print students who joined in 2020
+    printStudentByRollNumber(students, 2, 2); // Print details of student with roll number 2
+
+    return 0;
+}
