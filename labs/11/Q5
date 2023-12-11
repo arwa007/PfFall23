@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+// Employee structure (nested inside Organization)
+struct Employee {
+    int employee_id;
+    char name[50];
+    float salary;
+};
+
+// Organization structure
+struct Organization {
+    char organisation_name[50];
+    char organisation_number[20];
+    struct Employee emp; // Nested Employee structure
+};
+
+int main() {
+    // Creating an instance of the Organization structure
+    struct Organization org;
+
+    // Assigning values to the structure members
+    strcpy(org.organisation_name, "NU-Fast");
+    strcpy(org.organisation_number, "NUFAST123ABC");
+
+    org.emp.employee_id = 127;
+    strcpy(org.emp.name, "Linus Sebastian");
+    org.emp.salary = 400000;
+
+    // Outputting the required data
+    printf("The size of the structure organization: %lu\n", sizeof(org));
+    printf("Organisation Name: %s\n", org.organisation_name);
+    printf("Organization Number: %s\n", org.organisation_number);
+    printf("Employee ID: %d\n", org.emp.employee_id);
+    printf("Employee name: %s\n", org.emp.name);
+    printf("Employee Salary: %.2f\n", org.emp.salary);
+
+    return 0;
+}
