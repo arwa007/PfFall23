@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+// Structure for Register
+struct Register {
+    int CourseId;
+    char CourseName[50];
+};
+
+// Structure for Student inheriting Register
+struct Student {
+    int StudentId;
+    char FirstName[50];
+    char LastName[50];
+    long long int cellno; // Assuming cellno is a long long integer
+    char email[50];
+    struct Register reg; // Inherited struct Register
+};
+
+int main() {
+    struct Student std[5]; // Array of 5 students
+
+    printf("Enter information for 5 students:\n");
+
+    for (int i = 0; i < 5; ++i) {
+        printf("\nStudent %d:\n", i + 1);
+        printf("Enter Student ID: ");
+        scanf("%d", &std[i].StudentId);
+
+        printf("Enter First Name: ");
+        scanf(" %[^\n]s", std[i].FirstName);
+
+        printf("Enter Last Name: ");
+        scanf(" %[^\n]s", std[i].LastName);
+
+        printf("Enter Cell Number: ");
+        scanf("%lld", &std[i].cellno);
+
+        printf("Enter Email: ");
+        scanf(" %[^\n]s", std[i].email);
+
+        printf("Enter Course ID: ");
+        scanf("%d", &std[i].reg.CourseId);
+
+        printf("Enter Course Name: ");
+        scanf(" %[^\n]s", std[i].reg.CourseName);
+    }
+
+    printf("\nInformation of 5 students:\n");
+
+    for (int i = 0; i < 5; ++i) {
+        printf("\nStudent %d:\n", i + 1);
+        printf("Student ID: %d\n", std[i].StudentId);
+        printf("Name: %s %s\n", std[i].FirstName, std[i].LastName);
+        printf("Cell Number: %lld\n", std[i].cellno);
+        printf("Email: %s\n", std[i].email);
+        printf("Course ID: %d\n", std[i].reg.CourseId);
+        printf("Course Name: %s\n", std[i].reg.CourseName);
+    }
+
+    return 0;
+}
