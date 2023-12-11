@@ -1,7 +1,7 @@
 # Arwa Feroze 23k-0022
 ## Pseudocode:
 
-Function sortByAgeAndPrice(ages[], prices[], n):
+    Function sortByAgeAndPrice(ages[], prices[], n):
     // Bubble sort algorithm to sort shirts based on age in ascending order
     for i from 0 to n - 2:
         for j from 0 to n - i - 2:
@@ -15,7 +15,7 @@ Function sortByAgeAndPrice(ages[], prices[], n):
             if ages[i] == ages[j] and prices[i] < prices[j]:
                 Swap prices[i] with prices[j]
 
-Function printSortedDetails(ages[], prices[], n):
+    Function printSortedDetails(ages[], prices[], n):
     Print "Sorted list in ascending order with respect to Age:"
     Print "Age\tPrice"
     for i from 0 to n - 1:
@@ -28,7 +28,7 @@ Function printSortedDetails(ages[], prices[], n):
     for i from 0 to n - 1:
         Print ages[i] + "\t" + prices[i]
 
-Function main():
+    Function main():
     Declare arrays ages and prices of size n
     Input ages and prices
 
