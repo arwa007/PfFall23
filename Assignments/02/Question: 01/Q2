@@ -1,0 +1,75 @@
+#include <stdio.h>
+
+// Function to find the minimum of two integers
+int min(int a, int b) {
+    return (a < b) ? a : b;
+}
+
+// Function to find the largest square submatrix of 1s
+void largestSquareSubmatrix(int matrix[][100], int rows, int cols) {
+    int maxSize = 0; // Variable to store the size of the largest square submatrix
+    int maxRow = 0; // Variable to store the starting row index of the largest submatrix
+    int maxCol = 0; // Variable to store the starting column index of the largest submatrix
+
+    // Creating an auxiliary matrix to store the sizes of submatrices
+    int aux[100][100];
+
+    // Copy the first row and first column as is
+    for (int i = 0; i < rows; ++i) {
+        aux[i][0] = matrix[i][0];
+    }
+
+    for (int j = 0; j < cols; ++j) {
+        aux[0][j] = matrix[0][j];
+    }
+
+    // Filling up the auxiliary matrix
+    for (int i = 1; i < rows; ++i) {
+        for (int j = 1; j < cols; ++j) {
+            if (matrix[i][j] == 1) {
+                aux[i][j] = min(aux[i - 1][j - 1], min(aux[i - 1][j], aux[i][j - 1])) + 1;
+                if (aux[i][j] > maxSize) {
+                    maxSize = aux[i][j];
+                    maxRow = i - maxSize + 1;
+                    maxCol = j - maxSize + 1;
+                }
+            } else {
+                aux[i][j] = 0;
+            }
+        }
+    }
+
+    // Displaying the largest square submatrix of 1s
+    if (maxSize > 0) {
+        printf("Largest Square Submatrix of 1s:\n");
+        for (int i = maxRow; i < maxRow + maxSize; ++i) {
+            for (int j = maxCol; j < maxCol + maxSize; ++j) {
+                printf("%d ", matrix[i][j]);
+            }
+            printf("\n");
+        }
+        printf("Dimensions (rows x cols): %d x %d\n", maxSize, maxSize);
+    } else {
+        printf("No square submatrix of 1s found.\n");
+    }
+}
+
+int main() {
+    int rows, cols;
+
+    printf("Enter the number of rows and columns for the matrix: ");
+    scanf("%d %d", &rows, &cols);
+
+    int matrix[100][100];
+
+    printf("Enter the elements of the matrix (0s and 1s):\n");
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    largestSquareSubmatrix(matrix, rows, cols);
+
+    return 0;
+}
