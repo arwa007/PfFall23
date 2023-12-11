@@ -1,0 +1,80 @@
+#include <stdio.h>
+
+int main() {
+    int flights[5][4] = {
+        {1, 300, 0, -1},
+        {1, 320, 1, 310},
+        {0, -1, 1, 280},
+        {1, 380, 0, -1},
+        {1, 375, 1, 400}
+    };
+
+    printf("Flight Availability Analysis\n");
+    printf("----------------------------\n");
+    printf("Day\tMorning\tPrice\tEvening\tPrice\n");
+    printf("------------------------------------\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d\t%d\t", i + 1, flights[i][0]);
+        if (flights[i][0] == 1) {
+            printf("%d\t", flights[i][1]);
+        } else {
+            printf("-\t");
+        }
+        printf("%d\t", flights[i][2]);
+        if (flights[i][2] == 1) {
+            printf("%d\n", flights[i][3]);
+        } else {
+            printf("-\n");
+        }
+    }
+    printf("\n");
+
+    int bestMorningDay = -1;
+    int bestMorningPrice = -1;
+    for (int i = 0; i < 5; i++) {
+        if (flights[i][0] == 1 && (bestMorningDay == -1 || flights[i][1] < bestMorningPrice)) {
+            bestMorningDay = i + 1;
+            bestMorningPrice = flights[i][1];
+        }
+    }
+    if (bestMorningDay != -1) {
+        printf("Best morning flight option: Day %d - Price: %d\n", bestMorningDay, bestMorningPrice);
+    } else {
+        printf("No morning flights available.\n");
+    }
+    printf("\n");
+
+    int bestEveningDay = -1;
+    int bestEveningPrice = -1;
+    for (int i = 0; i < 5; i++) {
+        if (flights[i][2] == 1 && (bestEveningDay == -1 || flights[i][3] < bestEveningPrice)) {
+            bestEveningDay = i + 1;
+            bestEveningPrice = flights[i][3];
+        }
+    }
+    if (bestEveningDay != -1) {
+        printf("Best evening flight option: Day %d - Price: %d\n", bestEveningDay, bestEveningPrice);
+    } else {
+        printf("No evening flights available.\n");
+    }
+    printf("\n");
+
+    int specificDay = 3; // Wednesday
+    printf("Flight information for Wednesday\n");
+    printf("-------------------------------\n");
+    printf("Day %d:\tMorning: %d", specificDay, flights[specificDay - 1][0]);
+    if (flights[specificDay - 1][0] == 1) {
+        printf("\tPrice: %d\n", flights[specificDay - 1][1]);
+    } else {
+        printf("\tNot available\n");
+    }
+    printf("\tEvening: %d", flights[specificDay - 1][2]);
+    if (flights[specificDay - 1][2] == 1) {
+        printf("\tPrice: %d\n", flights[specificDay - 1][3]);
+    } else {
+        printf("\tNot available\n");
+    }
+    printf("\n");
+
+    return 0;
+}
