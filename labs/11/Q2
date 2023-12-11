@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_PARTS 240 // Total number of parts from 'AA0' to 'FF9'
+
+// Structure to store information about an engine part
+struct EnginePart {
+    char serialNumber[4]; // 3 characters for serial number (e.g., "AA0" to "FF9")
+    int yearOfManufacture;
+    char material[20];
+    int quantityManufactured;
+};
+
+int main() {
+    struct EnginePart parts[MAX_PARTS];
+
+    // Assuming the structure is populated with data (for demonstration purposes)
+    // You can initialize this data dynamically or through user input
+
+    // Example: Populating parts with some sample data
+    int count = 0;
+    for (char c = 'A'; c <= 'F'; ++c) {
+        for (char d = 'A'; d <= 'F'; ++d) {
+            for (int i = 0; i <= 9; ++i) {
+                // Generate serial number in the format "XY0" where X and Y are characters 'A' to 'F'
+                sprintf(parts[count].serialNumber, "%c%c%d", c, d, i);
+                parts[count].yearOfManufacture = 2023; // Set year of manufacture (e.g., 2023)
+                strcpy(parts[count].material, "Steel"); // Set material (e.g., "Steel")
+                parts[count].quantityManufactured = 100; // Set quantity manufactured (e.g., 100)
+                count++;
+            }
+        }
+    }
+
+    // Retrieve information on parts with serial numbers between 'BB1' and 'CC6'
+    printf("Information on parts with serial numbers between 'BB1' and 'CC6':\n");
+    for (int i = 0; i < MAX_PARTS; ++i) {
+        if (strcmp(parts[i].serialNumber, "BB1") >= 0 && strcmp(parts[i].serialNumber, "CC6") <= 0) {
+            printf("Serial Number: %s\n", parts[i].serialNumber);
+            printf("Year of Manufacture: %d\n", parts[i].yearOfManufacture);
+            printf("Material: %s\n", parts[i].material);
+            printf("Quantity Manufactured: %d\n", parts[i].quantityManufactured);
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
