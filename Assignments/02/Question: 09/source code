@@ -1,0 +1,84 @@
+#include <stdio.h>
+
+void fillInwardSpiral(int arr1[][100], int n) {
+    int val = 1, top = 0, bottom = n - 1, left = 0, right = n - 1;
+
+    while (val <= n * n) {
+        for (int i = left; i <= right; i++) {
+            arr1[top][i] = val++;
+        }
+        top++;
+
+        for (int i = top; i <= bottom; i++) {
+            arr1[i][right] = val++;
+        }
+        right--;
+
+        for (int i = right; i >= left; i--) {
+            arr1[bottom][i] = val++;
+        }
+        bottom--;
+
+        for (int i = bottom; i >= top; i--) {
+            arr1[i][left] = val++;
+        }
+        left++;
+    }
+}
+
+void fillOutwardSpiral(int arr2[][100], int n) {
+    int val = n * n, top = 0, bottom = n - 1, left = 0, right = n - 1;
+
+    while (val >= 1) {
+        for (int i = left; i <= right; i++) {
+            arr2[top][i] = val--;
+        }
+        top++;
+
+        for (int i = top; i <= bottom; i++) {
+            arr2[i][right] = val--;
+        }
+        right--;
+
+        for (int i = right; i >= left; i--) {
+            arr2[bottom][i] = val--;
+        }
+        bottom--;
+
+        for (int i = bottom; i >= top; i--) {
+            arr2[i][left] = val--;
+        }
+        left++;
+    }
+}
+
+void printArray(int arr[][100], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%-4d", arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+
+    printf("Enter the value of N: ");
+    scanf("%d", &n);
+
+    int arr1[100][100] = {0}; // Initializing Array 1 with zeros
+    int arr2[100][100];
+
+    fillInwardSpiral(arr1, n);
+    fillOutwardSpiral(arr2, n);
+
+    printf("Array 1 (inward spiral):\n");
+    printArray(arr1, n);
+
+    printf("Array 2 (outward spiral):\n");
+    printArray(arr2, n);
+
+    return 0;
+}
