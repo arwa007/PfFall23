@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+// Structure to store date elements
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+// Function to check if a year is a leap year
+bool isLeapYear(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        return true;
+    else
+        return false;
+}
+
+// Function to get the number of days in a month
+int daysInMonth(int month, int year) {
+    int days[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (isLeapYear(year) && month == 2)
+        return 29;
+    else
+        return days[month];
+}
+
+// Function to add days to a given date
+void addDays(struct Date *date, int daysToAdd) {
+    while (daysToAdd > 0) {
+        int daysInCurrentMonth = daysInMonth(date->month, date->year);
+        if (date->day + daysToAdd <= daysInCurrentMonth) {
+            date->day += daysToAdd;
+            break;
+        } else {
+            daysToAdd -= (daysInCurrentMonth - date->day + 1);
+            date->day = 1;
+            if (date->month == 12) {
+                date->month = 1;
+                date->year++;
+            } else {
+                date->month++;
+            }
+        }
+    }
+}
+
+int main() {
+    struct Date currentDate = {11, 12, 2023}; // Change this to represent the current date
+    int daysToAdd = 45;
+
+    printf("Current Date: %02d/%02d/%d\n", currentDate.day, currentDate.month, currentDate.year);
+
+    addDays(&currentDate, daysToAdd);
+
+    printf("Date after adding %d days: %02d/%02d/%d\n", daysToAdd, currentDate.day, currentDate.month, currentDate.year);
+
+    return 0;
+}
