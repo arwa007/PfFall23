@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+#define NUM_EMPLOYEES 10
+
+// Structure to store employee information
+struct Employee {
+    char name[50];
+    float salary;
+    int hoursWorkedPerDay;
+};
+
+// Function to adjust salary based on hours worked
+void adjustSalary(struct Employee *employee) {
+    if (employee->hoursWorkedPerDay >= 8 && employee->hoursWorkedPerDay < 10) {
+        employee->salary += 50;
+    } else if (employee->hoursWorkedPerDay >= 10 && employee->hoursWorkedPerDay < 12) {
+        employee->salary += 100;
+    } else if (employee->hoursWorkedPerDay >= 12) {
+        employee->salary += 150;
+    }
+}
+
+int main() {
+    struct Employee employees[NUM_EMPLOYEES];
+
+    // Adjust salary based on hours worked for each employee
+    for (int i = 0; i < NUM_EMPLOYEES; ++i) {
+        adjustSalary(&employees[i]);
+    }
+
+    // Print names of employees along with their final salaries
+    printf("Employee Names and Final Salaries:\n");
+    for (int i = 0; i < NUM_EMPLOYEES; ++i) {
+        printf("%s - Final Salary: $%.2f\n", employees[i].name, employees[i].salary);
+    }
+
+    return 0;
+}
