@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
+
+void findRamanujanHardyNumbers(int n) {
+    int limit = n * n * n;
+
+    for (int a = 1; a < n; a++) {
+        int a3 = a * a * a;
+        if (a3 >= limit) {
+            break;
+        }
+
+        for (int b = a; b < n; b++) {
+            int b3 = b * b * b;
+            int sum = a3 + b3;
+
+            if (sum >= limit) {
+                break;
+            }
+
+            int c = cbrt(sum);
+            if (c * c * c == sum && c > b) {
+                printf("%d = %d^3 + %d^3 = %d^3 + %d^3\n", sum, a, b, b, a);
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    printf("Ramanujan-Hardy numbers less than %d^3:\n", n);
+    findRamanujanHardyNumbers(n);
+
+    return 0;
+}
